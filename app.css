@@ -4,6 +4,25 @@ body {
     margin: 0;
     padding: 20px;
   }
+
+
+  /* this is the calorie calculator button*/
+  .button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 140px;
+    
+  }
+
   
   .about-container .button {
     /* Styles for the button within the about-container */
@@ -104,3 +123,5 @@ body {
   input[type="submit"]:hover {
     background-color: #45a049;
   }
+
+  
