@@ -3,10 +3,47 @@
 <head>
   <title>Calorie Calculator</title>
   <link rel="stylesheet" type="text/css" href="app.css">
+  <style>
+    /* CSS for the pop-up ... something is not working properly*/
+    .popup {
+      position: fixed; 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
 
-  
+    .popup h3 {
+      margin-top: 0;
+    }
+
+    .popup p {
+      margin-bottom: 10px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="calorieCalculator.html">Calorie Calculator</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
   <h1>Calorie Calculator</h1>
   <form id="calorie-form">
     <label for="age">Age:</label>
@@ -24,23 +61,76 @@
     <label for="height">Height (in cm):</label>
     <input type="number" id="height" name="height" required>
 
-    <label for="activity-level">Activity Level:</label>
-    <select id="activity-level" name="activity-level" required>
-      <option value="sedentary">Sedentary (little or no exercise)</option>
-      <option value="lightly-active">Lightly Active (light exercise/sports 1-3 days/week)</option>
-      <option value="moderately-active">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
-      <option value="very-active">Very Active (hard exercise/sports 6-7 days/week)</option>
-      <option value="extra-active">Extra Active (very hard exercise/sports and physical job or 2x training)</option>
+    <label for="goals">Goals:</label>
+    <select id="goals" name="goals" required>
+      <option value="shred-down">Shred Down</option>
+      <option value="recomposition">Recomposition</option>
+      <option value="muscle-development">Muscle Development</option>
     </select>
 
     <input type="submit" value="Calculate">
   </form>
 
-  <div id="result">
-    <h2>Your Estimated Daily Calorie Needs:</h2>
-    <p id="calorie-result"></p>
-  </div>
+  <script>
+    document.getElementById("calorie-form").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-  <script src="script.js"></script>
+      // Get the form values
+      var age = parseInt(document.getElementById("age").value);
+      var gender = document.getElementById("gender").value;
+      var weight = parseFloat(document.getElementById("weight").value);
+      var height = parseInt(document.getElementById("height").value);
+      var goals = document.getElementById("goals").value;
+
+      // Perform the calculation to get the estimated calories
+      var estimatedCalories = calculateCalories(age, gender, weight, height, goals);
+
+      // Display the calories in a pop-up
+      var popup = document.createElement("div");
+      popup.classList.add("popup");
+      popup.innerHTML = `
+        <h3>Your Estimated Daily Calorie Needs:</h3>
+        <p>${estimatedCalories} calories</p>
+        <p>Note: This is a general estimation and not personalized advice. Please consult with a healthcare professional for accurate information.</p>
+        <span class="popup-close">&times;</span>
+      `;
+
+      // Add event listener to close the pop-up when the close button is clicked
+      var closeButton = popup.querySelector(".popup-close");
+      closeButton.addEventListener("click", function() {
+        document.body.removeChild(popup);
+      });
+
+      // Add the pop-up to the document
+      document.body.appendChild(popup);
+    });
+
+    function calculateCalories(age, gender, weight, height, goals) {
+      // Replace this with your actual logic to calculate the estimated calories
+      // Here's a sample implementation based on simple formulas (this may not be accurate, please use proper formulas):
+      var basalMetabolicRate = 0;
+
+      // Calculate the basal metabolic rate based on gender
+      if (gender === "male") {
+        basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age + 5;
+      } else if (gender === "female") {
+        basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age - 161;
+      }
+
+      // Adjust the basal metabolic rate based on goals
+      if (goals === "shred-down") {
+        basalMetabolicRate *= 0.8; // Reduce by 20%
+      } else if (goals === "recomposition") {
+        basalMetabolicRate *= 1; // Maintain the same
+      } else if (goals === "muscle-development") {
+        basalMetabolicRate *= 1.2; // Increase by 20%
+      }
+
+      // Round the estimated calories to the nearest whole number
+      var estimatedCalories = Math.round(basalMetabolicRate);
+
+      return estimatedCalories;
+    }
+  </script>
 </body>
 </html>
