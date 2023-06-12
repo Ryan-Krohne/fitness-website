@@ -1,15 +1,21 @@
+/* Reset styles */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #1a1a1a;
   margin: 0;
   padding: 20px;
+  color: #333;
 }
 
-
-
 h1 {
-  color: #333;
   text-align: center;
+  color: #333;
+  margin: 20px 0;
 }
 
 form {
@@ -28,6 +34,7 @@ label {
 }
 
 input[type="text"],
+input[type="number"],
 select,
 textarea {
   width: 100%;
@@ -57,63 +64,74 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
-/* CSS for calorie Calculator*/
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  color: #333;
-  text-align: center;
-}
-
-form {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  max-width: 400px;
+/* Styling for homepage */
+.container {
+  max-width: 960px;
   margin: 0 auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
+nav {
+  background-color: #333;
+  text-align: center;
+  padding: 10px 0;
 }
 
-input[type="number"],
-select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  font-size: 14px;
+nav ul {
+  list-style: none;
 }
 
-input[type="submit"] {
-  background-color: #4CAF50;
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
   color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-#result {
-  margin-top: 20px;
+nav ul li a:hover {
+  background-color: #555;
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
   text-align: center;
 }
 
-#calorie-result {
-  font-size: 18px;
-  font-weight: bold;
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-
+nav ul li a:hover {
+  background-color: #555;
+}
