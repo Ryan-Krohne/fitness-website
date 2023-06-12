@@ -8,109 +8,40 @@
   </style>
 </head>
 <body>
-  <h1>Fitness Website</h1>
+  <h1>Fitness Wisdom</h1>
 
   <nav>
-    <a href="about.html" class="aboutUs">About Us</a>
-    <a href="CalorieCalculator.html" class="button">Calorie Calculator</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="calorieCalculator.html">Calorie Calculator</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
+
   
-  <form action="process_form.php" method="POST">
-    <label for="height">Height:</label>
-    <input type="range" id="height" name="height" min="120" max="200" value="170" oninput="updateHeightValue(this)">
-    <span id="heightValue">170 cm</span>
-      
-    <label for="weight">Weight:</label>
-    <input type="range" id="weight" name="weight" min="60" max="250" value ="150" oninput="updateWeightValue(this)">
-    <span id="weightValue">150 lbs</span>
-
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender" required>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-    
-    <label for="fitness-goals">Fitness Goals:</label>
-    <label>
-      <input type="radio" name="goal" value="burn-fat">
-        Achieve Your Fat Loss Goals
-      </label>
-    <label>
-      <input type="radio" name="goal" value="build-muscle">
-        Build Muscle, and get Strong!
-    </label>
-    <label>
-      <input type="radio" name="goal" value="recomp">
-        Complete Body Recomposition
-    </label>
-
-
-
-    <input type="submit" value="Submit">
-  </form>
+  <section>
+    <h2>Stay Fit and Healthy</h2>
+    <p>Discover the best fitness tips, workouts, and nutrition advice to help you achieve your health goals.</p>
+    <p>Whether you are looking to lose weight, build muscle, or improve your overall fitness, we have the resources you need.</p>
+    <p>Explore our articles, videos, and expert guides to take your fitness journey to the next level.</p>
+  </section>
   
-  <script src="apple.js"></script>
-
-  <script>
-      // JavaScript code for form validation and submission
-      window.addEventListener('DOMContentLoaded', function() {
-        // Get the form element
-        var form = document.querySelector('form');
-      
-        // Add event listener for form submission
-        form.addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent the form from being submitted
-      
-          // Get the form fields
-          var heightField = document.getElementById('height');
-          var weightField = document.getElementById('weight');
-          var genderField = document.getElementById('gender');
-          var goalsField = document.getElementById('fitness-goals');
-      
-          // Get the values from the form fields
-          var height = heightField.value.trim();
-          var weight = weightField.value.trim();
-          var gender = genderField.value;
-          var goals = goalsField.value.trim();
-      
-          // Perform form validation
-          if (height === '' || weight === '' || goals === '') {
-            alert('Please fill in all required fields.');
-            return;
-          }
-      
-          // Create an object to hold the form data
-          var formData = {
-            height: height,
-            weight: weight,
-            gender: gender,
-            goals: goals
-          };
-      
-          // Here, you can perform further processing or submit the form data to the server using AJAX or other methods
-          // For simplicity, we will just log the form data to the console
-          console.log(formData);
-      
-          // Reset the form
-          form.reset();
-        });
-      });
-
-      // Update height value function
-      function updateHeightValue(element) {
-        var heightValueElement = document.getElementById("heightValue");
-        heightValueElement.textContent = element.value + " cm";
-      }
-
-      // Update weight value function
-      function updateWeightValue(element) {
-        var weightValueElement = document.getElementById("weightValue");
-        weightValueElement.textContent = element.value + " lbs";
-      }
+  <section>
+    <h2>Latest Articles</h2>
+    <ul>
+      <li><a href="article1.html">5 Essential Exercises for Strength Training</a></li>
+      <li><a href="article2.html">Healthy Eating: A Balanced Diet for Optimal Fitness</a></li>
+      <li><a href="article3.html">Cardio Workouts: Burn Fat and Improve Stamina</a></li>
+    </ul>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 My Fitness Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
 
-
-
-  </script>
 </body>
 </html>
