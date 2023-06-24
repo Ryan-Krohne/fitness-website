@@ -1,1 +1,3 @@
 buttons for github and linkedin on about us page
+Build API to return information from the internet
+Consider adding a DB
