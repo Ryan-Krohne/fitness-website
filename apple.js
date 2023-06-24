@@ -40,8 +40,8 @@ window.addEventListener('DOMContentLoaded', function() {
         goals: goals
       };
   
-      // Here, you can perform further processing or submit the form data to the server using AJAX or other methods
-      // For simplicity, we will just log the form data to the console
+      // can submit the form data to the server using AJAX or other methods
+      // for now, will just log the form data to the console
       console.log(formData);
   
       // Reset the form
