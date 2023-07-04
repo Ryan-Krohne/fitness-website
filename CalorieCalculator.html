@@ -90,7 +90,8 @@
       popup.innerHTML = `
         <h3>Your Estimated Daily Calorie Needs:</h3>
         <p>${estimatedCalories} calories</p>
-        <p>Note: This is a general estimation and not personalized advice. Please consult with a healthcare professional for accurate information.</p>
+        <p>Note: This is a general estimation and not personalized advice. This number will fluctuate based on your level of physical activity.
+          Please consult with a healthcare professional for accurate information.</p>
         <span class="popup-close">&times;</span>
       `;
 
@@ -109,20 +110,21 @@
 
       // Calculate the basal metabolic rate based on gender
       if (gender === "male") {
-        basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age + 5;
+        basalMetabolicRate = (10 * weight) + (6.25 * height) - (5 * age )+ 5;
       } else if (gender === "female") {
-        basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age - 161;
+        basalMetabolicRate = (10 * weight) + (6.25 * height) - (5 * age) - 161;
       }
 
+      basalMetabolicRate*=1.2; //accounts for activity level
 
 
       // Adjust the basal metabolic rate based on goals
       if (goals === "shred-down") {
-        basalMetabolicRate *= 0.8; // Reduce by 20%
+        basalMetabolicRate -= 250; //lose weight
       } else if (goals === "recomposition") {
-        basalMetabolicRate *= 1; // Maintain the same
+        basalMetabolicRate *= 1; // Maintain
       } else if (goals === "muscle-development") {
-        basalMetabolicRate *= 1.2; // Increase by 20%
+        basalMetabolicRate += 250; //gain weight
       }
 
       // Round the estimated calories to the nearest whole number
