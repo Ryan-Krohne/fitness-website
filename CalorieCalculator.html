@@ -105,8 +105,6 @@
     });
 
     function calculateCalories(age, gender, weight, height, goals) {
-      // Replace this with your actual logic to calculate the estimated calories
-      // Here's a sample implementation based on simple formulas (this may not be accurate, please use proper formulas):
       var basalMetabolicRate = 0;
 
       // Calculate the basal metabolic rate based on gender
@@ -115,6 +113,8 @@
       } else if (gender === "female") {
         basalMetabolicRate = 10 * weight + 6.25 * height - 5 * age - 161;
       }
+
+
 
       // Adjust the basal metabolic rate based on goals
       if (goals === "shred-down") {
