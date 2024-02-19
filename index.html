@@ -14,57 +14,66 @@
 
 <body data-bs-theme="dark">
 
+  <a href="index.html">
+    <img src="lib/icon.png" alt="background" width="100" height="100" style="position: absolute; top: -44px ">
+  </a>
 
 
+  <div class="navbar-animation">
+    <div class="dropdown"
+      style="top: 10px !important; background-color: rgba(0, 0, 0, 1)!important; width: 150px !important; margin-left: 100px; position: absolute;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg:none; --bs-btn-hover-border-color: transparent">
+        Workout Plans
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+    <div class="dropdown"
+      style="margin-left: 100px; position: absolute; top: 10px !important; background-color: rgb(0, 0, 0) !important; width: 150px !important; right: 620px !important;">
 
-  <div class="dropdown" style="top: 10px !important; background-color: rgba(0, 0, 0, 1)!important; width: 150px !important; margin-left: 100px; position: absolute;">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg:none; --bs-btn-hover-border-color: transparent">
-      Workout Plans
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
+      <a href="login.html">
+        <button class="btn btn-secondary" type="button"
+          style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg: none; --bs-btn-hover-border-color: transparent; margin-left: 10px !important; padding-left: 2px !important; border-right-width: 0px !important; padding-right: 2px !important; --bs-btn-active-bg: black; border-color: black">
+          About Us
+        </button>
+      </a>
+
+    </div>
+    <div class="dropdown"
+      style="top: 10px !important; background-color: rgb(0, 0, 0) !important; width: 150px !important; left: 240px !important; position: absolute;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg:none; --bs-btn-hover-border-color: transparent">
+        Supplements
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Bunk Creatine</a></li>
+        <li><a class="dropdown-item" href="#">Tenbolone dealers near you!</a></li>
+        <li><a class="dropdown-item" href="#">Anavar</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="dropdown" style="margin-left: 100px; position: absolute; top: 10px !important; background-color: rgb(0, 0, 0) !important; width: 150px !important; right: 620px !important;">
-    
-    <a href="login.html">
-<button class="btn btn-secondary" type="button" style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg: none; --bs-btn-hover-border-color: transparent; margin-left: 10px !important; padding-left: 2px !important; border-right-width: 0px !important; padding-right: 2px !important; --bs-btn-active-bg: black; border-color: black">
-      About Us
-    </button>
-
-    </a>
-    
-
-    
-    
+  <div class="container-fluid" style="background-image: url('lib/background.jpg'); height: 100vh; z-index: 10; ">
+    <!-- add this to style and fix it later:  background-size: cover; background-position: center; -->
   </div>
-  <div class="dropdown" style="top: 10px !important; background-color: rgb(0, 0, 0) !important; width: 150px !important; left: 240px !important; position: absolute;">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="--bs-btn-bg: none; --bs-btn-border-color: black; --bs-btn-hover-bg:none; --bs-btn-hover-border-color: transparent">
-      Supplements
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Bunk Creatine</a></li>
-      <li><a class="dropdown-item" href="#">Tenbolone dealers near you!</a></li>
-      <li><a class="dropdown-item" href="#">Anavar</a></li>
-    </ul>
-  </div>
-  <div class="container-fluid" style="background-image: url('lib/background.jpg'); height: 100vh; z-index: 10; "> <!-- add this to style and fix it later:  background-size: cover; background-position: center; -->
-  </div>
-  <p class="text-overlay" style="position: absolute; top: 160px !important; font-size: 36px; margin-left: 50px; color:white">
+  <p class="text-overlay"
+    style="position: absolute; top: 160px !important; font-size: 36px; margin-left: 50px; color:white">
     Achieve the physique of your dreams
   </p>
 
   <div class="register">
     <a href="login.html">
-    <button type="button" class="btn btn-dark"
-      style="position: absolute; font-size: 18px; margin-left: 230px !important; top: 230px !important;">Discover plans
-      now</button>
+      <button type="button" class="btn btn-dark"
+        style="position: absolute; font-size: 18px; margin-left: 230px !important; top: 230px !important;">Discover
+        plans
+        now</button>
     </a>
   </div>
 
-  
+
 
 
 
@@ -113,12 +122,20 @@
 
   .register {
     opacity: 0.01;
-    animation: fadeIn 1s ease-in-out 1.5s;
+    animation: fadeIn 1s ease-in-out 1s;
     animation-fill-mode: forwards;
   }
-  .dropdown:hover .dropdown-menu{
-    display:block;
 
+  .dropdown:hover .dropdown-menu {
+    display: block;
+
+
+  }
+
+  .navbar-animation {
+    opacity: 0.01;
+    animation: fadeIn 1s ease-in-out 2s;
+    animation-fill-mode: forwards;
 
   }
 
@@ -131,7 +148,6 @@
       opacity: 1;
     }
   }
-
 </style>
 
 </html>
